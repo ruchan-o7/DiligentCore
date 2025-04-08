@@ -1,5 +1,6 @@
 if(PLATFORM_WIN32)
 
+<<<<<<< HEAD
     # Copies engine dlls to the target's output directory
     function(copy_engine_dlls TARGET_NAME)
         set(ENGINE_DLLS)
@@ -24,6 +25,30 @@ if(PLATFORM_WIN32)
         if(TARGET Diligent-Archiver-shared)
             list(APPEND ENGINE_DLLS Diligent-Archiver-shared)
         endif()
+=======
+    function(copy_required_dlls TARGET_NAME)
+        # if(D3D11_SUPPORTED)
+        #     list(APPEND ENGINE_DLLS Diligent-GraphicsEngineD3D11-shared)
+        # endif()
+        # if(D3D12_SUPPORTED)
+        #     list(APPEND ENGINE_DLLS Diligent-GraphicsEngineD3D12-shared)
+        # endif()
+        # if(GL_SUPPORTED)
+        #     list(APPEND ENGINE_DLLS Diligent-GraphicsEngineOpenGL-shared)
+        # endif()
+        # if(VULKAN_SUPPORTED)
+        #     list(APPEND ENGINE_DLLS Diligent-GraphicsEngineVk-shared)
+        # endif()
+        # if(METAL_SUPPORTED)
+        #     list(APPEND ENGINE_DLLS Diligent-GraphicsEngineMetal-shared)
+        # endif()
+        # if(WEBGPU_SUPPORTED)
+        #     list(APPEND ENGINE_DLLS Diligent-GraphicsEngineWebGPU-shared)
+        # endif()
+        # if(TARGET Diligent-Archiver-shared)
+        #     list(APPEND ENGINE_DLLS Diligent-Archiver-shared)
+        # endif()
+>>>>>>> eaaf6558b (comment out shared library config for vulkan)
 
         foreach(DLL ${ENGINE_DLLS})
             add_custom_command(TARGET ${TARGET_NAME} POST_BUILD
